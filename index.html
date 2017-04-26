@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutorial display</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+    
+  
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script src="js/angular-socket.js"></script>
+    
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <style>
+    
+        video { 
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+        /*  background-size: cover;*/
+        /*  transition: 1s opacity;*/
+        }
+       .thumbnail {
+            width: 80%;
+            height: 100%;
+            position: absolute;    
+            margin:auto;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            background-color: #aaa;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;  
+            position: absolute;
+            margin:auto;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+        }
+    
+    </style>
+    
+   
+    
+    
+</head>
+<body ng-app="pim">
+
+	<main class="cd-main-content" ng-controller="GeneralController">
+ <input type="button" value="---------------" ng-click="test()"/>
+        <input type="button" value="---------------" ng-click="someLoop()"/>
+        
+		<div class="content-wrapper"  ng-switch on="selectiongeneral">
+              <div ng-switch-when="screen" id="screen"> 
+            <video id="walkthr" autoplay controls src="video/Pim%20-%20khouloudzayati.mp4" type="video/mp4" width="100%" height="100%" onended="myFunction()"/>
+            </div>
+            <div ng-switch-when="pub" id="pubzone"> 
+                
+<!--                <div ng-switch on="selectionspecial">-->
+                    <div id="pubzone" class="thumbnail"> 
+<!--                    <video autoplay ng-src="{{videosrc}}" width="100%" height="100%"/>-->
+                    </div>
+<!--
+                    <div ng-switch-when="imag"> 
+                        <img ng-src="{{imagesrc}}"/>
+                    </div>
+-->
+<!--                </div>-->
+            </div>
+		</div> <!-- .content-wrapper -->
+	</main> <!-- .cd-main-content -->
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery.menu-aim.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+     <script>
+    
+//        document.getElementById('walkthr').addEventListener('ended',myHandler,false);
+//    function myHandler(e) {
+//        // What you want to do after the event
+//        console.log("video ended and this is a test");
+//    }
+        jQuery.noConflict();
+        function myFunction(){
+            console.log("video ended and this is a test");
+//            $.get('http://localhost:3001/changestatus', function() {
+//                console.log("status changed to done");
+//            });
+            jQuery.getJSON("http://localhost:3001/changestatus", function(){
+						
+					});
+        }
+    
+    </script>
+    
+    
+    
+</body>
+</html>
