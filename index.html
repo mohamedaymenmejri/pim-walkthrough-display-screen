@@ -75,8 +75,10 @@
 <body ng-app="pim">
 
 	<main class="cd-main-content" ng-controller="GeneralController">
+<!--
  <input type="button" value="---------------" ng-click="test()"/>
         <input type="button" value="---------------" ng-click="someLoop()"/>
+-->
         
 		<div class="content-wrapper"  ng-switch on="selectiongeneral">
               <div ng-switch-when="screen" id="screen"> 
@@ -88,11 +90,9 @@
                     <div id="pubzone" class="thumbnail"> 
 <!--                    <video autoplay ng-src="{{videosrc}}" width="100%" height="100%"/>-->
                     </div>
-<!--
-                    <div ng-switch-when="imag"> 
-                        <img ng-src="{{imagesrc}}"/>
-                    </div>
--->
+<!--                    <div ng-switch-when="imag"> -->
+                        <img src="img/smart-queue.png"/>
+<!--                    </div>-->
 <!--                </div>-->
             </div>
 		</div> <!-- .content-wrapper -->
